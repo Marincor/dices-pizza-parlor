@@ -1,109 +1,74 @@
-import React, { useState } from 'react';
-import '../assets/css/main/pizzas.css';
+import React, { useState } from "react";
+import "../assets/css/main/pizzas.css";
 
-import { PizzasProducts } from './Products';
+import { PizzasProducts } from "./Products";
 
+function Pizzas() {
+  const [quantidade, setQuantidade] = useState(0);
 
+  function updateState() {
+    let soma = 1;
 
+    PizzasProducts.map((atributo) => {
+      soma += atributo.quantidade;
+    });
 
+    setQuantidade(soma);
 
-function Pizzas (){
+    console.log(`quantidade é ${quantidade}`);
+    sessionStorage.setItem("currentPizza", JSON.stringify(quantidade));
+  }
 
-    const [quantidade, setQuantidade] = useState(0);
+  function AddtoPlate1(e) {
+    const btnClicked = e.target.id;
+    PizzasProducts[btnClicked].quantidade++;
 
-   
-  
-    function updateState() {
-        let soma = 1;
-        
-        PizzasProducts.map(atributo => {
+    sessionStorage.setItem("produtos", JSON.stringify(PizzasProducts));
 
-            soma +=  atributo.quantidade ;
-        })
-       
-     
-        
-       
+    updateState();
+  }
 
-        setQuantidade(soma)
+  function MenuShow() {
+    window.location.reload();
+    const menu = document.querySelector(".menu-container");
 
-        console.log(`quantidade é ${quantidade}`)
-        sessionStorage.setItem('currentPizza',JSON.stringify(quantidade));
-        
-    }
+    menu.classList.add("modal");
+  }
 
- function  AddtoPlate1 (e) {
-        const btnClicked = e.target.id;
-        PizzasProducts[btnClicked].quantidade++
+  return (
+    <section className="main__section" id="Pizzas">
+      <h2 className="main__section__titulo">Pizzas</h2>
 
-        sessionStorage.setItem('produtos', JSON.stringify( PizzasProducts))
-        
-     
-        updateState();
-    }
-
-    
-    function  MenuShow() {
-
-        window.location.reload();
-        const menu = document.querySelector('.menu-container');
-        
-       menu.classList.add('modal')
-
-       
-
-        
-    }
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
+      {PizzasProducts.map((objeto) => {
         return (
-
-
-            <section className='main__section' id="Pizzas" >
-
-
-
-                <h2 className="main__section__titulo">Pizzas</h2>
-
-
-                {PizzasProducts.map(objeto => {
-
-                    return (
-
-
-                        <div className="main__section__item" >
-                            <p className="main__section__texto">{objeto.nome}</p>
-                            <img src={objeto.img} alt='pizza' className="main__section__img" />
-                            <p className="main__section__price">R$ {objeto.preco}</p>
-                            <button className="main__section_btn" id={objeto.id} onClick={AddtoPlate1}>Adicionar ao prato 🍽️ </button>
-                            <p> <a href="#prato" className="main__section__link" onClick={()=>{
-
-window.location.href="html/#prato"
-}}>ir para o prato</a> </p>
-                        </div>
-                                  
-                             
-                             )
-
-
-                })}
-
-            </section>
+          <div className="main__section__item">
+            <p className="main__section__texto">{objeto.nome}</p>
+            <img src={objeto.img} alt="pizza" className="main__section__img" />
+            <p className="main__section__price">R$ {objeto.preco}</p>
+            <button
+              className="main__section_btn"
+              id={objeto.id}
+              onClick={AddtoPlate1}
+            >
+              Adicionar ao prato 🍽️{" "}
+            </button>
+            <p>
+              {" "}
+              <a
+                href="#prato"
+                className="main__section__link"
+                onClick={() => {
+                  window.location.href = "html/#prato";
+                }}
+              >
+                ir para o prato
+              </a>{" "}
+            </p>
+          </div>
         );
-    
+      })}
+    </section>
+  );
 }
 
 export default Pizzas;
