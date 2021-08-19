@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+
+@media screen and (min-width:0px) {
+    .menu__div {
+
+        background-color: rgba(25, 24, 26, 0.2);
+        width:  80vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        background-blend-mode: color;
+    
+    }
+    
+    .menu__item {
+    
+        margin-bottom: 5rem;
+        font-size: 2.5rem;
+        border-left: 1px solid yellow;
+        border-right: 1px solid yellow;
+        padding: 0rem 1rem;
+    }
+    
+    .menu__link {
+    
+        
+        text-decoration: none;
+        color: rgb(247, 245, 245);
+        font-family: "Hind", sans-serif;
+        
+    }
+    
+    .menu__link:hover {
+    
+        text-decoration: underline;
+    }
+
+    .menu__bask {
+
+        font-size: 2rem;
+        display: grid;
+        margin-bottom: 1rem;
+        grid-template-areas: 'img', 'span';
+        cursor: pointer;
+    }
+    .menu__bask img {
+        grid-area: img;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        width: 4rem;
+        background-color: rgb(214, 109, 109);
+        border-radius: 1.5rem;
+        font-family: "Hind", sans-serif;
+    }
+
+    .menu__bask span {
+        grid-area: span;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        font-size: 1rem;
+        padding-left: 0.45rem;
+        color:white;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .menu__div {
+
+        width: 40vw;
+        height: 60vh;
+    }
+    
+}
+    
+
+
+@media screen and (min-width: 1024px) { 
+
+
+    .menu__div {
+
+       
+        height: 80vh;
+    }
+
+
+}

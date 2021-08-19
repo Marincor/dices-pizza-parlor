@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+
+
+@media screen and (min-width:0px) {
+
+    .prato-container {
+
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        
+    }
+    
+    .prato__items{
+    
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        font-family: "Exo 2", sans-serif;
+        height: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-left: 1px solid yellow;
+        padding:1rem;
+        align-items: flex-start;
+    }
+    
+    .prato__titulo {
+    
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .prato__quantidade {
+        font-size: 2rem;
+        color: brown;
+        width: auto;
+        margin: 1rem 0rem;
+    }
+    
+    .prato__price {
+    
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 1rem 0rem;
+    }
+
+}
+
+
+@media screen and (min-width:768px) { 
+
+
+    .prato-container {
+
+        flex-direction: row;
+        padding-bottom: 1rem;
+    }
+
+    
+
+}

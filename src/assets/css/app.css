@@ -1,0 +1,22 @@
+html {
+
+    
+}
+
+div {
+
+    margin: 0;
+    padding:0;
+}
+
+.App {
+
+ 
+   background-position: center;
+   background-size:cover;
+   background-repeat: no-repeat;
+   background-color: rgba(204, 167, 166, 0.4);
+   background-blend-mode: color;
+    height: 100vh ;
+
+}

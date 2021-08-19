@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+@media screen and (min-width:0px) {
+    
+    .main__section {
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    
+    .main__section__titulo {
+    
+        font-family: "Exo 2", sans-serif;
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
+        margin-top: 2rem;
+    
+        
+    }
+   
+    
+    .main__section__item {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        padding: 0.4rem 0rem;
+        border-top: 1px solid yellow;
+      
+        
+    }
+    .main__section__texto {
+        font-family: 'Style Script', cursive;
+        font-size: 3rem;
+        color: brown;
+    
+    }
+    
+    .main__section__img {
+    
+        width: 15rem;
+    
+    
+    
+    }
+
+    .main__section__price {
+
+        color: white;
+    }
+    
+    .main__section_btn {
+    
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        background-color: white;
+        border-radius: 1rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+    
+    .main__section_btn:hover {
+    
+        background-color: rgb(73, 72, 49);
+    }
+
+    .veg {
+
+        margin-top: 10rem;
+        background-color: rgb(73, 151, 70);
+        width: auto;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .veg h2 {
+
+        color: black;
+        font-size: 3.5rem;
+    }
+
+    .main__section__link {
+      
+        color: white;
+
+    }
+
+
+    
+}
+
+@media screen and (min-width:768px) {
+
+    .veg{
+
+        width: 80%;
+    }
+
+}

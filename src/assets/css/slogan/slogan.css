@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+
+@media screen and (min-width: 0px) {
+  .slogan-container {
+    margin-top: 25%;
+    font-family: "Hind", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slogan__texto {
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    color: rgb(247, 247, 247);
+    font-size: 3rem;
+    text-align: left;
+    margin: 1rem;
+    padding:1rem;
+    background-color: rgba(185, 177, 177, 0.2);
+  }
+
+  .slogan__texto strong {
+
+    text-decoration: underline;
+  }
+
+  .slogan__btn {
+    cursor: pointer;
+    border-radius: 1rem;
+    color: white;
+    width: 10rem;
+    background-color: brown;
+    padding: 1rem 0rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+    .slogan-container {
+
+        margin-top: 8%;
+    }
+
+    .slogan__texto{
+
+        text-align: left;
+        padding:1rem;
+        font-size: 3.4rem;
+        width: 25rem;
+        line-height: 5rem;
+        
+    }
+}
