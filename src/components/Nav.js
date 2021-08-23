@@ -25,8 +25,7 @@ function Nav() {
         const Container =  e.target;
         const ContainerClass = document.querySelector('.menu-container.modal');
         
-        
-        console.log(e.target)
+
         if (Container === ContainerClass) {
 
             ContainerClass.classList.remove('modal')
