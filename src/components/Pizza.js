@@ -111,7 +111,7 @@ function Pizzas({setFrangoCatupiry, frangoCatupiry, caipira, setCaipira, peperon
         return (
           <div className="main__section__item" key={Math.random()}>
             <p className="main__section__texto">{objeto.nome}</p>
-            <img src={objeto.img} alt="pizza" className="main__section__img" />
+            <img src={objeto.img} alt={objeto.nome} className="main__section__img" />
             <p className="main__section__price">R$ {objeto.preco}</p>
             <button
               className="main__section_btn"
