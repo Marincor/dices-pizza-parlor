@@ -6,7 +6,7 @@ function Footer () {
 
     return(
 
-        <footer className='footer-container'>
+        <footer className='footer-container' id='footer'>
             <h4 className='footer__titulo'>Dice's</h4>
             <p className='footer__texto'>Coded and created by: <a  className='footer__link' href='https://github.com/Marincor'>Marincor</a> </p>
             <p>v-2</p>
