@@ -90,9 +90,14 @@
     .main__section__link {
       
         color: white;
+        cursor:pointer
+    }
+    .main__section__link:hover {
 
+        text-decoration: underline;
     }
 
+    
 
     
 }

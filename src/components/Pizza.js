@@ -1,37 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../assets/css/main/pizzas.css";
 
 import { PizzasProducts } from "./Products";
 
-function Pizzas() {
+
+function Pizzas({setFrangoCatupiry, frangoCatupiry, caipira, setCaipira, peperoni, setPeperoni, pizzas, setPizzas}) {
  
-  const [frangoCatupiry, setFrangoCatupiry] = useState(  {preco: PizzasProducts[0].preco, quantidade: 0, total:0 })
-  const [caipira, setCaipira] = useState(  {preco: PizzasProducts[1].preco, quantidade: 0,total:0 })
-  const [peperoni, setPeperoni] = useState(  {preco: PizzasProducts[2].preco, quantidade: 0, total: 0 })
-
-const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
-
-
-
-
-  useEffect(()=>{
-
-    
-    const vetorPizzas = JSON.parse(sessionStorage.getItem('pizzas')) || [];
-
-    vetorPizzas.push(pizzas)
-  
-   
-    sessionStorage.setItem('pizzas', JSON.stringify(vetorPizzas))
-
-    
- 
-
-    
-
-  } )
-
-
 
 
   function requestFood(expression, objeto1, objeto2, objeto3) {
@@ -69,12 +43,14 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
       const reducer = (accumulator, currentValue) => JSON.parse(accumulator) + JSON.parse( currentValue);
 
       const array = [a,b,c] || [];
+      
       const arrayReduced = array.reduce(reducer)
       return arrayReduced;
 
     }
     
 
+   
     switch(expression) {
       case'Frango c/ Catupiry':
       setFrangoCatupiry({...objeto1, quantidade:frangoQtd, total: frangoTotal})
@@ -83,7 +59,7 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
       x.push(frangoTotal)
       y.push(caipira.total)
       z.push(peperoni.total)
-      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total: w(x,y, z) })
+      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total1:  w(x,y, z) })
       break;
 
       case'Caipira':
@@ -93,7 +69,7 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
       x.push(frangoCatupiry.total)
       y.push(caipiraTotal)
       z.push(peperoni.total)
-      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total: w(x,y, z) })
+      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total1:w(x,y, z) })
       break;
 
       case'Peperoni':
@@ -102,7 +78,9 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
       x.push(frangoCatupiry.total)
       y.push(caipira.total)
       z.push(peperoniTotal)
-      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total: w(x,y, z) })
+      setPizzas({...pizzas, sabores: flavorPizzas, quantidade: flavorPizzas.length, total1: w(x,y, z) })
+      break;
+      default: console.log('nothing to set')
       break;
 
     }
@@ -123,13 +101,15 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
 
 
   
+
+  
   return (
     <section className="main__section" id="Pizzas">
       <h2 className="main__section__titulo">Pizzas</h2>
 
       {PizzasProducts.map((objeto) => {
         return (
-          <div className="main__section__item">
+          <div className="main__section__item" key={Math.random()}>
             <p className="main__section__texto">{objeto.nome}</p>
             <img src={objeto.img} alt="pizza" className="main__section__img" />
             <p className="main__section__price">R$ {objeto.preco}</p>
@@ -142,15 +122,15 @@ const [pizzas, setPizzas] = useState({sabores:'', quantidade: 0, total:0})
             </button>
             <p>
               {" "}
-              <a
-                href="#prato"
+              <span
+              
                 className="main__section__link"
                 onClick={() => {
-                  window.location.href = "html/#prato";
+                  window.scroll(0, 10000)
                 }}
               >
                 ir para o prato
-              </a>{" "}
+              </span>{" "}
             </p>
           </div>
         );

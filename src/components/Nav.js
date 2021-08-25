@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../assets/css/nav/nav.css'
 import '../assets/css/nav/menu.css'
 
@@ -7,7 +7,7 @@ import {ReactComponent as PizzaSVG } from '../assets/img/pizza.svg'
 import Menu from './Menu';
 
 
-function Nav() {
+function Nav({pizzas}) {
 
 
    function  MenuShow() {
@@ -49,7 +49,9 @@ function Nav() {
                      <p className="nav__text">Menu</p>
                      <PizzaSVG className='nav__icon' onClick={MenuShow} />
                      <div className='menu-container' onClick={MenuHidden} >
-                        <Menu/>
+                        <Menu
+                        pizzas={pizzas}
+                        />
                      </div>
                  </nav>
                 

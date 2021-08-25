@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../assets/css/nav/nav.css"
 import "../assets/css/slogan/slogan.css"
 
