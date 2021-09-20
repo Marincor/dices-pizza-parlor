@@ -39,7 +39,7 @@ https://dices-pizza-restaurant.vercel.app/
 
 # en - version
 
-# Dice's - Pizzaria Parlor
+# Dice's - Pizza Parlor
 
 ![dices tour](https://user-images.githubusercontent.com/84210050/132066043-70017560-37a7-4eda-b95e-d2d0bbec7700.gif)
 
